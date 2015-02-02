@@ -5,6 +5,7 @@ $(document).ready(function(){
     init: function () {
       page.initStyling();
       page.initEvents();
+      page.getIronYardPosts();
     },
     initStyling: function () {
       console.log('init styling');
@@ -22,29 +23,29 @@ $(document).ready(function(){
 
     getIronYardPosts: function () {
       $.ajax({
-        url: page.config.baseURL + '/v1.1/read/tags/the-iron-yard/posts?pretty=true&number=20',
+        url: page.config.baseUrl + '/v1.1/read/tags/the-iron-yard/posts?pretty=true&number=20',
         type: 'GET',
         dataType: 'JSONP', // type of data that were expecting to get
         success: function (data) {
-          console.log(posts);
-          posts.data.forEach(function(item, idx, arr) {
+          console.log(data);
+          data.posts.forEach(function(item, idx, arr) {
             $('.container').append('<img src="' +
-                            posts.author.avatar_URL +
+                            item.author.avatar_URL +
                             '">' +
                             '<a href="' +
-                            posts.capabilities.site_URL +
+                            item.capabilities.site_URL +
                             '">' +
-                            posts.capabilities.site_name +
+                            item.site_name +
                             '</a>' + '<img src="' +
-                            posts.post_thumbnail.URL +
+                            item.featured_image +
                             '">' +
                             '<a href="' +
-                            posts.URL +
+                            item.URL +
                             '">' +
-                            posts.title +
+                            item.title +
                             '</a>' +
                             '<p>' +
-                            posts.excerpt +
+                            item.excerpt +
                             '</p>');
           });
 
