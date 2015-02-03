@@ -29,24 +29,30 @@ $(document).ready(function(){
         success: function (data) {
           console.log(data);
           data.posts.forEach(function(item, idx, arr) {
-            $('.container').append('<img src="' +
+            $('.container').append( '<div class="post-box">' +
+                            '<img class="auth-image" src="' +
                             item.author.avatar_URL +
                             '">' +
-                            '<a href="' +
-                            item.capabilities.site_URL +
+                            '<a class="site-name" href="' +
+                            item.site_URL +
                             '">' +
+                            '<p>' +
                             item.site_name +
-                            '</a>' + '<img src="' +
+                            '</p>' +
+                            '</a>' + '<img class="post-image" src="' +
                             item.featured_image +
                             '">' +
                             '<a href="' +
                             item.URL +
                             '">' +
+                            '<h2>' +
                             item.title +
+                            '</h2>' +
                             '</a>' +
                             '<p>' +
                             item.excerpt +
-                            '</p>');
+                            '</p>' +
+                            '</div>');
           });
 
         },

@@ -1,0 +1,68 @@
+$light: #999999;
+$medium: #666666;
+$contrast: #336699;
+$contrast-light: rgba(51, 102, 153, 0.2);
+$box-background: #FFFFFF;
+$sans-serif: Verdana, Geneva, sans-serif;
+$serif: Georgia, Times, 'Times New Roman', serif;
+
+body {
+  background: $contrast-light;
+}
+
+.post-box {
+  border: 1px solid $light;
+  color: $medium;
+  background-color: $box-background;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 3px 3px 5px 2px #ccc;
+  -moz-box-shadow:    3px 3px 5px 2px #ccc;
+  box-shadow:         3px 3px 5px 2px #ccc;
+}
+
+.auth-image {
+  width: 8%;
+  padding: 20px 20px 0 20px;
+}
+
+.post-image {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $medium;
+}
+
+a:hover {
+  color: $contrast;
+}
+
+p, h2 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+p {
+  font-family: $sans-serif;
+  font-size: 14px;
+}
+
+.site-name {
+  display: inline;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+h2 {
+  font-family: $serif;
+}
+
+h1 {
+  font-family: $serif;
+  color: $medium;
+  text-align: center;
+  margin: 25px;
+}
